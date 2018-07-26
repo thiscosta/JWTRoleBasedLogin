@@ -7,4 +7,6 @@ Spring Boot API with role based login using jwt
 
 -- If the user has the ADMIN role, a get request to /users will return a JSON list of users. (The users on this list aren't the same of data.sql)
 
+Obs: Make sure of include the token in the header of get request to /users
+
 
