@@ -1,4 +1,4 @@
-package com.tcdevelop.projetocps.utils;
+package com.tcdevelop.jwtlogin.utils;
 
 public class JdbcUtils {
 	

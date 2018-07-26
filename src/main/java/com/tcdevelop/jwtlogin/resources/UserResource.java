@@ -1,4 +1,4 @@
-package com.tcdevelop.projetocps.resources;
+package com.tcdevelop.jwtlogin.resources;
 
 import java.security.Principal;
 

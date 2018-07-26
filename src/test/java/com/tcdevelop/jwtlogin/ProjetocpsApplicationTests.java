@@ -1,4 +1,4 @@
-package com.tcdevelop.projetocps;
+package com.tcdevelop.jwtlogin;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

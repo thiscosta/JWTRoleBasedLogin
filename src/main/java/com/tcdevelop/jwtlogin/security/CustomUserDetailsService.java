@@ -1,7 +1,7 @@
-package com.tcdevelop.projetocps.security;
+package com.tcdevelop.jwtlogin.security;
 
 
-import static com.tcdevelop.projetocps.utils.JdbcUtils.*;
+import static com.tcdevelop.jwtlogin.utils.JdbcUtils.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

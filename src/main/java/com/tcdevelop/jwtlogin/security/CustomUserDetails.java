@@ -1,4 +1,4 @@
-package com.tcdevelop.projetocps.security;
+package com.tcdevelop.jwtlogin.security;
 
 import java.util.ArrayList;
 import java.util.Collection;
