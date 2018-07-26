@@ -1,7 +1,6 @@
-package com.tcdevelop.projetocps.config;
+package com.tcdevelop.jwtlogin.config;
 
 import java.io.IOException;
-import java.util.Collections;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -16,7 +15,7 @@ import org.springframework.security.web.authentication.AbstractAuthenticationPro
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tcdevelop.projetocps.security.CpsUserDetails;
+import com.tcdevelop.projetocps.security.CustomUserDetails;
 
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
@@ -29,8 +28,8 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException, IOException, ServletException {
 		
-		CpsUserDetails usuario = new ObjectMapper()
-				.readValue(request.getInputStream(), CpsUserDetails.class);
+		CustomUserDetails usuario = new ObjectMapper()
+				.readValue(request.getInputStream(), CustomUserDetails.class);
 		
 		return getAuthenticationManager().authenticate(
 				new UsernamePasswordAuthenticationToken(

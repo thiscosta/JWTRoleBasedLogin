@@ -1,25 +1,17 @@
-package com.tcdevelop.projetocps.config;
+package com.tcdevelop.jwtlogin.config;
 
-import java.sql.SQLException;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-
-import com.tcdevelop.projetocps.security.CpsUserDetailsService;
-import static com.tcdevelop.projetocps.utils.JdbcUtils.*;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;

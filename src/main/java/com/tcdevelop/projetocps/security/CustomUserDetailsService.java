@@ -24,9 +24,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CpsUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {
 
-	private static final Logger logger = Logger.getLogger(CpsUserDetailsService.class.getSimpleName());
+	private static final Logger logger = Logger.getLogger(CustomUserDetailsService.class.getSimpleName());
 
 	@Autowired
 	private DataSource dataSource;
@@ -38,7 +38,7 @@ public class CpsUserDetailsService implements UserDetailsService {
 		try {
 			connection = dataSource.getConnection();
 
-			CpsUserDetails userDetails = buscarUsuario(connection, login);
+			CustomUserDetails userDetails = buscarUsuario(connection, login);
 
 			Collection<GrantedAuthority> permissoesPorUsuario = buscarPermissoes(connection,
 					login, PERMISSOES_POR_USUARIO);
@@ -65,7 +65,7 @@ public class CpsUserDetailsService implements UserDetailsService {
 		}
 	}
 
-	public CpsUserDetails buscarUsuario(Connection connection, String login) throws SQLException {
+	public CustomUserDetails buscarUsuario(Connection connection, String login) throws SQLException {
 		PreparedStatement ps = connection.prepareStatement(USUARIO_POR_LOGIN);
 		ps.setString(1, login);
 
@@ -82,7 +82,7 @@ public class CpsUserDetailsService implements UserDetailsService {
 		rs.close();
 		ps.close();
 
-		CpsUserDetails cpsUserDetails = new CpsUserDetails();
+		CustomUserDetails cpsUserDetails = new CustomUserDetails();
 		cpsUserDetails.setNome(nome);
 		cpsUserDetails.setLogin(login);
 		cpsUserDetails.setSenha(password);

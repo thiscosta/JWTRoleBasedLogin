@@ -1,7 +1,6 @@
-package com.tcdevelop.projetocps.config;
+package com.tcdevelop.jwtlogin.config;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

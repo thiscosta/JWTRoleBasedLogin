@@ -1,4 +1,4 @@
-package com.tcdevelop.projetocps.config;
+package com.tcdevelop.jwtlogin.config;
 
 import java.io.IOException;
 

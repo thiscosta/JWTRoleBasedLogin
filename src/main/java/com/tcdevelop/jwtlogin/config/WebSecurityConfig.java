@@ -1,4 +1,4 @@
-package com.tcdevelop.projetocps.config;
+package com.tcdevelop.jwtlogin.config;
 
 import javax.sql.DataSource;
 
@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.tcdevelop.projetocps.security.CpsUserDetailsService;
+import com.tcdevelop.projetocps.security.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
@@ -26,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder builder, 
 			PasswordEncoder passwordEncoder, 
-			CpsUserDetailsService userDetailsService) throws Exception {
+			CustomUserDetailsService userDetailsService) throws Exception {
 		builder
 			.userDetailsService(userDetailsService)
 			.passwordEncoder(passwordEncoder);
